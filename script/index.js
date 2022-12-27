@@ -11,5 +11,6 @@ function next_step(){
         {
             localStorage.setItem('count_record',1);
     }
+    window.location.href = 'hall.html'
     }
 }

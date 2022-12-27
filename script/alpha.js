@@ -47,7 +47,7 @@ function timer(timer_tick_start){
                 add_point=1;
                 timer_tick_start=15;
                 count_alpha=10;
-                start_game();
+                game(timer_tick_start,count_numbers);
             }else window.location.href = 'hall.html';
         }
         timer_tick--;
