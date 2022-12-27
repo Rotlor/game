@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div id="rule">
+        <h1>Правила</h1>
+        <p>Ваша задача как можно быстрее нажимать числа в порядке возрастания.<br>Когда таймер истечёт игра закончится. Удачи!</p>
+        <button id="btn_start" onclick="start_game()">Начать!</button>
+    </div>
+    <div id="game">
+        <div id="info_box">
+            <div class="info" id="tracker_level">
+                Уровень:
+            </div>
+            <div class="info" id="tracker_timer">
+                Осталось Времени:
+            </div>
+            <div class="info" id="tracker_point">
+                Очки:
+            </div>
+        </div>
+        <div id="game_space">
+            
+        </div>
+    </div>
+    <script src="script/numbers.js"></script>
+</body>
+</html>
