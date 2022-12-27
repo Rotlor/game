@@ -7,26 +7,26 @@ var words = ['Арбуз','Дыня','Хлеб','Алфавит','Букварь
 let game_space = document.getElementById("game_space");
 var count_record;
 
-
 var level=1;
 var points=0;
 var add_point=1;
-var timer_tick=10;
+var timer_tick_start=15;
 var count_alpha=10;
 
 function start_game() {
     document.getElementById("rule").style.display = "none";
     document.getElementById("game").style.display = "flex";
-    game(timer_tick,count_alpha);
+    game(timer_tick_start,count_alpha);
     info_level.innerHTML = "Уровень: "+level;
     info_point.innerHTML = "Очки: " + points;
 }
 
-function game(timer_tick,count_alpha){
-    timer(timer_tick);
+function game(timer_tick_start,count_alpha){
+    timer(timer_tick_start);
     create_objects(count_alpha,massive(count_alpha));
 }
-function timer(timer_tick){
+function timer(timer_tick_start){
+    timer_tick=timer_tick_start;
     timerId = setInterval(function() {
         info_timer.innerHTML= "Осталось времени: " + timer_tick;
         if (timer_tick==0){
@@ -45,7 +45,7 @@ function timer(timer_tick){
                 level=1;
                 points=0;
                 add_point=1;
-                timer_tick=10;
+                timer_tick_start=15;
                 count_alpha=10;
                 start_game();
             }else window.location.href = 'hall.html';
@@ -69,10 +69,11 @@ function create_objects(){
         box_alpha.style.border = "2px double black";
         box_alpha.style.textAlign = "center";
         box_alpha.innerHTML = alpha[i];
+        box_alpha.style.borderRadius = "10px";
         box_alpha.style.color = "white";
         box_alpha.style.position = "absolute";
-        box_alpha.style.top = String((getRandomInt(25)))+"vw";
-        box_alpha.style.left = String((getRandomInt(25)))+"vw";
+        box_alpha.style.top = String((getRandomInt(30)))+"vw";
+        box_alpha.style.left = String((getRandomInt(30)))+"vw";
         game_space.appendChild(box_alpha);
         box_alpha.onclick = function check(){
             if (box_alpha.innerHTML==alpha[0])
@@ -84,7 +85,7 @@ function create_objects(){
                     alert("Уровень пройден!");
                     info_level.innerHTML = "Уровень: "+ ++level;
                     clearTimeout(timerId);
-                    game(--timer_tick,count_alpha+=2)
+                    game(timer_tick_start-=2,count_alpha+=1)
                     add_point++;
                 }
                 

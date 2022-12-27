@@ -8,22 +8,23 @@ var count_record;
 var level=1;
 var points=0;
 var add_point=1;
-var timer_tick=10;
+var timer_tick_start=15;
 var count_numbers=10;
 
 function start_game() {
     document.getElementById("rule").style.display = "none";
     document.getElementById("game").style.display = "flex";
-    game(timer_tick,count_numbers);
+    game(timer_tick_start,count_numbers);
     info_level.innerHTML = "Уровень: "+level;
     info_point.innerHTML = "Очки: " + points;
 }
 
-function game(timer_tick,count_numbers){
-    timer(timer_tick);
+function game(timer_tick_start,count_numbers){
+    timer(timer_tick_start);
     create_objects(count_numbers,massive(count_numbers));
 }
-function timer(timer_tick){
+function timer(timer_tick_start){
+    timer_tick = timer_tick_start;
     timerId = setInterval(function() {
         info_timer.innerHTML= "Осталось времени: " + timer_tick;
         if (timer_tick==0){
@@ -42,7 +43,7 @@ function timer(timer_tick){
                 level=1;
                 points=0;
                 add_point=1;
-                timer_tick=10;
+                timer_tick_start=15;
                 count_numbers=10;
                 start_game();
             }else window.location.href = 'hall.html';
@@ -64,8 +65,9 @@ function create_objects(){
         number.style.textAlign = "center";
         number.innerHTML = numbers[i];
         number.style.position = "absolute";
-        number.style.top = String((getRandomInt(25)))+"vw";
-        number.style.left = String((getRandomInt(25)))+"vw";
+        number.style.borderRadius = "10px";
+        number.style.marginTop = String((getRandomInt(25)))+"vw";
+        number.style.marginLeft = String((getRandomInt(25)))+"vw";
         /* number.style.marginRight = String((getRandomInt(width/3)))+"px";
         number.style.marginBottom = String((getRandomInt(width/3)))+"px"; */
         game_space.appendChild(number);
@@ -79,7 +81,7 @@ function create_objects(){
                     alert("Уровень пройден!");
                     info_level.innerHTML = "Уровень: "+ ++level;
                     clearTimeout(timerId);
-                    game(--timer_tick,count_numbers+=2)
+                    game(timer_tick_start-=2,count_numbers+=2)
                     add_point++;
                 }
                 
