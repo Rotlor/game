@@ -64,8 +64,8 @@ function create_objects(){
         number.style.textAlign = "center";
         number.innerHTML = numbers[i];
         number.style.position = "absolute";
-        number.style.marginTop = String((getRandomInt(width/4)))+"px";
-        number.style.marginLeft = String((getRandomInt(width/4)))+"px";
+        number.style.marginTop = String((getRandomInt(25)))+"px";
+        number.style.marginLeft = String((getRandomInt(25)))+"px";
         /* number.style.marginRight = String((getRandomInt(width/3)))+"px";
         number.style.marginBottom = String((getRandomInt(width/3)))+"px"; */
         game_space.appendChild(number);
