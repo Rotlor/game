@@ -70,8 +70,8 @@ function create_objects(){
         box_alpha.innerHTML = alpha[i];
         box_alpha.style.color = "white";
         box_alpha.style.position = "absolute";
-        box_alpha.style.top = String((getRandomInt(30)))+"vw";
-        box_alpha.style.left = String((getRandomInt(30)))+"vw";
+        box_alpha.style.top = String((getRandomInt(25)))+"vw";
+        box_alpha.style.left = String((getRandomInt(25)))+"vw";
         game_space.appendChild(box_alpha);
         box_alpha.onclick = function check(){
             if (box_alpha.innerHTML==alpha[0])
