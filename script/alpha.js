@@ -7,6 +7,7 @@ var words = ['Арбуз','Дыня','Хлеб','Алфавит','Букварь
 let game_space = document.getElementById("game_space");
 var count_record;
 
+
 var level=1;
 var points=0;
 var add_point=1;
