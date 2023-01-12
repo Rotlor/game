@@ -1,15 +1,15 @@
 var info_timer = document.getElementById("tracker_timer");
 var info_point = document.getElementById("tracker_point")
 var info_level = document.getElementById("tracker_level")
-var numbers = [];
-let game_space = document.getElementById("game_space");
+var Sentences  = ['Одно кольцо, чтоб править всеми','Каждый охотник мечтает знать где сидит фазан','А роза упала на лапу Азора','Если долго всматриваться в бездну, бездна начнет всматриваться в тебя.'];
+let pictures = document.getElementById("pictures");
 var count_record;
 
 var level=1;
 var points=0;
 var add_point=1;
 var timer_tick_start=15;
-var count_numbers=10;
+var count_numbers=3;
 
 function start_game() {
     document.getElementById("rule").style.display = "none";
@@ -20,7 +20,7 @@ function start_game() {
 }
 
 function game(timer_tick_start,count_numbers){
-    timer(timer_tick_start);
+   /*  timer(timer_tick_start); */
     create_objects(count_numbers,massive(count_numbers));
 }
 function timer(timer_tick_start){
@@ -68,9 +68,7 @@ function create_objects(){
         number.style.borderRadius = "10px";
         number.style.marginTop = String((getRandomInt(25)))+"vw";
         number.style.marginLeft = String((getRandomInt(25)))+"vw";
-        /* number.style.marginRight = String((getRandomInt(width/3)))+"px";
-        number.style.marginBottom = String((getRandomInt(width/3)))+"px"; */
-        game_space.appendChild(number);
+        pictures.appendChild(number);
         number.onclick = function check(){
             if (number.innerHTML==numbers[0])
             {
