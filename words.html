@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/game.css">
+    <title>Слова</title>
+    <link rel="stylesheet" href="/css/words.css">
 </head>
 <body>
     <div id="rule">
         <h1>Правила</h1>
-        <p>Ваша задача как можно быстрее выбирать свойства числа, выделенным красным цветом. Максимальное количество свойств для числа - 2.<br>Когда таймер истечёт игра закончится. Удачи!</p>
+        <p>Ваша задача вставить слова в предложение. Для этого необходимо выбрать пропущенное место, выделенное желтым цветом, кликнуть и выбрать слово из списка ниже . С каждым новым уровнем будем увеличиваться количество пропущенных слов, а так же количество предложений<br>Когда таймер истечёт - игра закончится и результат сохранится в разделе "Статистика". Удачи!</p>
         <button id="btn_start" onclick="start_game()">Начать!</button>
     </div>
     <div id="game">
@@ -26,15 +26,12 @@
             </div>
         </div>
         <div id="game_space">
-            <div id="properties">
-                Свойства
-            </div>
             <div id="second_part">
                 <div id="pictures"></div>
-                <div id="choosen_properties">Минимальное число из представленных имеет следующие свойство:</div>
+                <div id="list_words">Слова</div>
                 </div>
             </div>
         </div>
-    <script src="script/numbers_3.js"></script>
+        <script src="/script/words.js"></script>
 </body>
 </html>
